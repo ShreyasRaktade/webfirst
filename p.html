@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <center> <button onclick="guessSquare()"><h1>check here!</h1></button></center>
+</body>
+
+    <script>
+       
+    
+        // const a=prompt("enter a number:");
+        // const b=a*a;
+        // const c=prompt("enter square number");
+        // for(;c==b;){
+        //     if(b==c){
+        //         document.write("correct choice");
+        //     }
+        //     else{
+        //         document.write("wrong choice");
+        //     }
+        // }
+        
+    
+
+        function guessSquare() {
+    const number = parseInt(prompt("Enter a number:"));
+    const correctSquare = number * number;
+
+    if (!isNaN(number)) {
+        for (let i = 0; i < 5; i++) {
+            const guess = parseInt(prompt("Guess the square of the number:"));
+            if (!isNaN(guess)) {
+                if (guess === correctSquare) {
+                    alert("Correct! You guessed the square of the number.");
+                    return;
+                } else {
+                    alert("Wrong guess. Try again.");
+                }
+            } else {
+                alert("Invalid input. Please enter a number.");
+            }
+        }
+        alert("Sorry, you've run out of attempts. The correct square was: " + correctSquare);
+    } else {
+        alert("Invalid input. Please enter a number.");
+    }
+}
+
+// Call the function to start the game
+guessSquare();
+
+    </script>
+</html>
